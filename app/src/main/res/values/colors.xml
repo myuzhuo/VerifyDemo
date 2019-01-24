@@ -3,4 +3,27 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- 通用白色 -->
+    <color name="white">#ffffff</color>
+    <color name="white_half_alpha">#80FFFFFF</color>
+    <color name="black_half_alpha">#80000000</color>
+    <color name="ten_percent_alpha">#1A000000</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="ripple_highlight_color">#2F000000</color>
+    <!-- 通用黑色 -->
+    <color name="common_app_main_color">#FF28b1cd</color>
+    <color name="common_app_main_color_half_alpha">#8028b1cd</color>
+    <color name="common_black_color">#FF000000</color>
+    <color name="common_blue_grey_color">#FF5d6e88</color>
+    <color name="common_blue_grey_color_half_alpha">#805d6e88</color>
+    <color name="common_location_fill_color">#80ff715d</color>
+    <!--  通用字体颜色 -->
+    <color name="common_text_color">#ff4a4a4a</color>
+    <!--  分割线 -->
+    <color name="common_line_color">#eeeeee</color>
+
+
+    <color name="color_4a4a4a">#4a4a4a</color>
 </resources>

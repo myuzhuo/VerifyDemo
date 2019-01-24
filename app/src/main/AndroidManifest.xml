@@ -20,7 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.record.demo.activity.WebViewActivity"
+            android:name="com.example.record.demo.ui.WebViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.example.record.demo.ui.BridgeWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="standard"
             android:screenOrientation="portrait"

@@ -1,4 +1,4 @@
-package com.example.record.demo.activity;
+package com.example.record.demo.ui;
 
 import android.content.Intent;
 import android.net.http.SslError;
