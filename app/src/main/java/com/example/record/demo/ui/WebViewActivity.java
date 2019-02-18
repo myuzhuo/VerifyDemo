@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.KeyEvent;
+import android.webkit.JsPromptResult;
+import android.webkit.JsResult;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -17,7 +18,6 @@ import com.example.record.demo.R;
 import com.example.record.demo.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 /**
@@ -32,16 +32,14 @@ final public class WebViewActivity extends BaseActivity {
     public static final String URL = "url";
     private WebSettings settings;
 
+
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_web_view);
-        ButterKnife.bind(this);
-        initData();
     }
 
-
-
+    @Override
     protected void initData() {
         Intent intent = getIntent();
         String url = intent.getStringExtra(URL);
@@ -66,6 +64,16 @@ final public class WebViewActivity extends BaseActivity {
                     //加载完成
 //                    dismissWaitDialog();
                 }
+            }
+
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+                return super.onJsAlert(view, url, message, result);
+            }
+
+            @Override
+            public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
+                return super.onJsPrompt(view, url, message, defaultValue, result);
             }
 
             //设置为网页的标题

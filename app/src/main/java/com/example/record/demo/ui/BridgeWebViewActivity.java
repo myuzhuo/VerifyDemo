@@ -1,5 +1,6 @@
 package com.example.record.demo.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Build;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 
 import com.example.record.demo.R;
 import com.example.record.demo.base.BaseActivity;
+import com.example.record.demo.utils.IntentUtils;
 import com.github.lzyzsd.jsbridge.BridgeWebView;
 
 import butterknife.BindView;
@@ -27,7 +29,13 @@ import butterknife.ButterKnife;
  * JSBridge的使用方法
  */
 final public class BridgeWebViewActivity extends BaseActivity {
+    public static final String URL = "url";
 
+    public static void startIntent(Context context,String url){
+        Intent intent=new Intent(context,BridgeWebViewActivity.class);
+        intent.putExtra(URL,url);
+        context.startActivity(intent);
+    }
 
     @BindView(R.id.bridge_webview)
     BridgeWebView webView;
@@ -42,28 +50,20 @@ final public class BridgeWebViewActivity extends BaseActivity {
     Button btnReset;
 
 
-    public static final String URL = "url";
+
+
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_bridge_web_view);
-        ButterKnife.bind(this);
-        initData();
     }
 
-
-
+    @Override
     protected void initData() {
-        Intent intent = getIntent();
-        String url = intent.getStringExtra(URL);
-
+        String url = IntentUtils.getStringExtra(getIntent(),URL,"");
         webView.loadUrl(url);
     }
-
-
-
 
     @Override
     public void onPause() {

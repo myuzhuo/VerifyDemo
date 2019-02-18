@@ -1,13 +1,37 @@
 package com.example.record.demo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.record.demo.base.BaseActivity;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class MainActivity extends BaseActivity {
+
+
+    @BindView(R.id.button_js_bridge)
+    Button jsBridge;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+
+    @OnClick({R.id.button_js_bridge})
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.button_js_bridge:
+
+                break;
+        }
     }
 }
