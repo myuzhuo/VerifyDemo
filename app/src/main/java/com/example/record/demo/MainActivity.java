@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.record.demo.base.BaseActivity;
+import com.example.record.demo.ui.BridgeWebViewActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.button_js_bridge:
-
+                BridgeWebViewActivity.startIntent(this,"");
                 break;
         }
     }
