@@ -19,7 +19,7 @@ import java.net.URLDecoder;
  */
 public class MyWebViewClient extends BridgeWebViewClient {
 
-    private String TAG="MyWebViewClient";
+    private String TAG="BridgeWebViewActivity";
 
     private Context mContext;
 

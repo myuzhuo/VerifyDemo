@@ -134,7 +134,7 @@ final public class BridgeWebViewActivity extends BaseActivity {
         webView.send("来自java的发送消息！！！", new CallBackFunction() {
             @Override
             public void onCallBack(String data) {
-                TipsToast.INSTANCE.show("bridge.init初始化数据成功" + data);
+                TipsToast.INSTANCE.showThreeSeconds("bridge.init初始化数据成功" + data);
             }
         });
     }
@@ -144,7 +144,7 @@ final public class BridgeWebViewActivity extends BaseActivity {
         switch (view.getId()){
             case R.id.btn_send:
                 String data=editView.getText().toString();
-                webView.loadUrl("javascript:nativeFunction("+data+")");
+                webView.loadUrl("javascript:nativeFunction('"+data+"')");
                 break;
             case R.id.btn_reset:
                 webView.loadUrl("file:///android_asset/web.html");

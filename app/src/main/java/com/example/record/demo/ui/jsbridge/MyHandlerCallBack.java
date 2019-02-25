@@ -11,7 +11,7 @@ import com.orhanobut.logger.Logger;
  * 自定义Handler回调
  */
 public class MyHandlerCallBack implements BridgeHandler {
-    private String TAG="MyHandlerCallBack";
+    private String TAG="BridgeWebViewActivity";
     private OnSendDataListener mOnSendDataListener;
 
     public MyHandlerCallBack(OnSendDataListener onSendDataListener) {
